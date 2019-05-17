@@ -42,12 +42,14 @@ pygame.display.set_caption("Best Life")
 population  = list()
 food_store  = list()
 
-with open('pop_2.pickle', 'rb') as f:
+with open('pop_1.pickle', 'rb') as f:
 	population = pickle.load(f)
 
 last_age = time.clock()
 lag_compensator = 0
 # player = Organism(0.01)
+
+population = [Organism(get_time(), org.model.get_weights()) for org in population]
 
 while True:
 
